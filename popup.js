@@ -1,5 +1,3 @@
-// popup.js
-
 document.addEventListener("DOMContentLoaded", () => {
   const addSkillButton = document.getElementById("addSkillButton");
   const trackingToggle = document.getElementById("trackingToggle");
@@ -8,7 +6,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const saveProfileButton = document.getElementById("saveProfileButton");
   const saveAcknowledgement = document.getElementById("saveAcknowledgement");
 
-  // Load existing skills and settings
   chrome.storage.local.get(
     ["skills", "trackingEnabled", "userProfile"],
     (data) => {
@@ -26,7 +23,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   );
 
-  // Add Skill
   addSkillButton.addEventListener("click", () => {
     const skillInput = document.getElementById("skillInput").value.trim();
     if (skillInput) {
@@ -43,7 +39,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Toggle Tracking
   trackingToggle.addEventListener("change", () => {
     chrome.storage.local.set(
       { trackingEnabled: trackingToggle.checked },
@@ -53,7 +48,6 @@ document.addEventListener("DOMContentLoaded", () => {
     );
   });
 
-  // Save Profile with GitHub Verification
   saveProfileButton.addEventListener("click", () => {
     const name = document.getElementById("userName").value.trim();
     const email = document.getElementById("userEmail").value.trim();
@@ -64,7 +58,6 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    // Function to verify GitHub URL
     const verifyGitHub = (url) => {
       if (!url) {
         return Promise.resolve({
@@ -103,16 +96,13 @@ document.addEventListener("DOMContentLoaded", () => {
       };
 
       chrome.storage.local.set({ userProfile }, () => {
-        // Show acknowledgement
         saveAcknowledgement.textContent = "Profile saved successfully!";
         saveAcknowledgement.classList.remove("hidden");
 
-        // Hide after 3 seconds
         setTimeout(() => {
           saveAcknowledgement.classList.add("hidden");
         }, 3000);
 
-        // Optionally, alert user if GitHub verification failed
         if (githubUrl && !result.verified) {
           alert(`GitHub verification failed: ${result.message}`);
         }
@@ -120,7 +110,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Export Data
   exportButton.addEventListener("click", () => {
     chrome.storage.local.get(["activity", "skills", "userProfile"], (data) => {
       const exportData = {
@@ -142,7 +131,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// Function to add skill to the UI list
 function addSkillToList(skill) {
   const skillList = document.getElementById("skillList");
   const skillItem = document.createElement("div");

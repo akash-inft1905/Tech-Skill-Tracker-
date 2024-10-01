@@ -1,5 +1,3 @@
-// background.js
-
 chrome.runtime.onInstalled.addListener(() => {
   chrome.storage.local.set({
     skills: [],
@@ -10,7 +8,6 @@ chrome.runtime.onInstalled.addListener(() => {
   console.log("Tech Skills Tracker installed.");
 });
 
-// Track website activity on navigation completion
 chrome.webNavigation.onCompleted.addListener(
   (details) => {
     const url = new URL(details.url).hostname;
@@ -33,7 +30,6 @@ chrome.webNavigation.onCompleted.addListener(
   { url: [{ hostContains: "" }] }
 );
 
-// Listen for messages from content scripts
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (!sender.tab || !sender.tab.url) {
     console.error("Sender tab or URL is undefined");
