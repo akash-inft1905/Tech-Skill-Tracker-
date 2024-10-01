@@ -1,6 +1,6 @@
 # Technology Skills Tracker Chrome Extension
 
-![Technology Skills Tracker](./screenshots/extension_screenshot.png)
+![Technology Skills Tracker](./images/image.png)
 
 ## Table of Contents
 
