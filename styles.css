@@ -1,0 +1,80 @@
+/* styles.css */
+
+body {
+  font-family: Arial, sans-serif;
+  width: 300px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+h2 {
+  font-size: 16px;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.section {
+  margin-bottom: 15px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"] {
+  width: calc(100% - 12px);
+  padding: 5px;
+  margin-bottom: 5px;
+  box-sizing: border-box;
+}
+
+button {
+  padding: 5px 10px;
+  margin-top: 5px;
+  cursor: pointer;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 3px;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+.skill-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f2f2f2;
+  padding: 5px;
+  margin-bottom: 5px;
+  border-radius: 3px;
+}
+
+.remove-button {
+  background-color: #ff4d4d;
+  border: none;
+  color: white;
+  padding: 3px 6px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.remove-button:hover {
+  background-color: #ff1a1a;
+}
+
+#saveAcknowledgement {
+  color: green;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.hidden {
+  display: none;
+}

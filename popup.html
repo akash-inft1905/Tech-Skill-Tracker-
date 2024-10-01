@@ -1,0 +1,52 @@
+<!-- popup.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tech Skills Tracker</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="popup.js" defer></script>
+  </head>
+  <body>
+    <h1>Tech Skills Tracker</h1>
+
+    <!-- Skill Addition Section -->
+    <div class="section">
+      <input type="text" id="skillInput" placeholder="Add Skill" />
+      <button id="addSkillButton">Add Skill</button>
+    </div>
+
+    <!-- Skill List -->
+    <div id="skillList" class="section"></div>
+
+    <!-- Tracking Toggle -->
+    <div class="section">
+      <label>
+        <input type="checkbox" id="trackingToggle" /> Enable Tracking
+      </label>
+    </div>
+
+    <!-- User Profile Section -->
+    <div class="section">
+      <h2>User Profile</h2>
+      <input type="text" id="userName" placeholder="Enter your name" />
+      <input type="email" id="userEmail" placeholder="Enter your email" />
+      <input
+        type="url"
+        id="githubUrl"
+        placeholder="Enter your GitHub URL (optional)"
+      />
+      <button id="saveProfileButton">Save Profile</button>
+      <div id="saveAcknowledgement" class="hidden">
+        Profile saved successfully!
+      </div>
+    </div>
+
+    <!-- Export Data Button -->
+    <div class="section">
+      <button id="exportButton">Export Data</button>
+    </div>
+  </body>
+</html>

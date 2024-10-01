@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "Tech Skills Tracker",
+  "version": "1.0",
+  "description": "A Chrome extension designed to track a user's technology skills by analyzing their browsing activity. This extension provides features such as skill addition, tracking time spent, click count, and scroll depth on various websites. Additionally, users can manage their profile and verify their identity via a GitHub URL.",
+
+  "permissions": ["storage", "activeTab", "scripting", "webNavigation"],
+  "host_permissions": ["https://api.github.com/*", "<all_urls>"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/icon16.png",
+      "48": "images/icon48.png",
+      "128": "images/icon128.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["images/*"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
